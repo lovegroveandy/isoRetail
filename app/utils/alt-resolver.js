@@ -55,8 +55,7 @@ class AltResolver {
 
       // Render the html with state in it
       content = {body: Iso.render(app, flux.flush()), title};
-    }
-    catch (error) {
+    } catch (error) {
       // catch script error, render 500 page
       debug('koa')('`rendering error`');
       debug('koa')(error);

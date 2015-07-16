@@ -1,0 +1,5 @@
+@import 'mixins/reset-list';
+
+.mapper, .mapper > div, .map-wrapper {
+  min-height: 11rem;
+}

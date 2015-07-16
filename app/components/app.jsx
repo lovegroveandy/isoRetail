@@ -61,16 +61,16 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="">
         <Header
           {...this.state.i18n}
           flux={this.props.flux} />
-        <hr />
-        {
-          React.Children
-            .map(this.props.children, this.renderChild)
-        }
-        <hr />
+        <main className="wrap">
+          {
+            React.Children
+              .map(this.props.children, this.renderChild)
+          }
+        </main>
         <Footer />
       </div>
     );

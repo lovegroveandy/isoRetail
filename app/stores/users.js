@@ -40,9 +40,7 @@ class UsersStore {
       let match = merged.find((u) => u.seed === user.seed) || null;
       if (match) {
         match = user;
-      }
-      // push the new user
-      else {
+      } else {
         merged.push(user);
       }
     });
@@ -55,8 +53,7 @@ class UsersStore {
     const index = findIndex(users, {seed: user.seed});
     if (index > -1) {
       users[index] = user;
-    }
-    else {
+    } else {
       users.push(user);
     }
 

@@ -5,6 +5,12 @@
 @import 'fonts';
 @import 'mixins/class-helper';
 
+html,
+body {
+  height: 100vh;
+}
+
 body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+

@@ -27,7 +27,7 @@ export default {
       users: '/utilisateurs',
       guides: '/guides',
       protected: '/protege',
-      profile: '/profil/:seed',
+      profile: '/profile',
       'login-info': '/info-client'
     }
   }

@@ -3,32 +3,30 @@ import {Link} from 'react-router';
 import {IntlMixin} from 'react-intl';
 
 import imageResolver from 'utils/image-resolver';
-import Spinner from 'components/shared/spinner';
-import LangPicker from 'components/shared/lang-picker';
+// import Spinner from 'components/shared/spinner';
 
 // Load styles for the header
 // and load the `react-logo.png` image
 // for the `<img src='' />` element
-let reactLogo;
+let booodlLogo;
 if (process.env.BROWSER) {
   require('styles/header.scss');
-  reactLogo = require('images/react-logo.png');
-}
-else {
-  reactLogo = imageResolver('images/react-logo.png');
+  booodlLogo = require('images/booodlLogo.png');
+} else {
+  booodlLogo = imageResolver('images/booodlLogo.png');
 }
 
 class Header extends Component {
 
   static propTypes: {
     flux: PropTypes.object.isRequired
-  }
+  };
 
   _getIntlMessage = IntlMixin.getIntlMessage
 
   state = {
     spinner: false
-  }
+  };
 
   componentDidMount() {
     this.props.flux
@@ -38,43 +36,49 @@ class Header extends Component {
 
   _handleRequestStoreChange = ({inProgress}) => {
     return this.setState({spinner: inProgress});
-  }
+  };
 
   render() {
     return (
-      <header className='app--header'>
-        {/* Spinner in the top right corner */}
-        <Spinner active={this.state.spinner} />
 
-        {/* LangPicker on the right side */}
-        <LangPicker
-          activeLocale={this.props.locales[0]}
-          onChange={this.props.flux.getActions('locale').switchLocale} />
+    <nav role="navigation" className="navbar navbar-inverse">
+      <div className="container">
+        <div className="navbar-header">
+          <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+          </button>
+          <Link to="profile"><span className="navbar-brand"><img src={booodlLogo}/></span></Link>
+        </div>
 
-        {/* React Logo in header */}
-        <Link to='/' className='app--logo'>
-          <img src={reactLogo} alt='react-logo' />
-        </Link>
-
-        {/* Links in the navbar */}
-        <ul className='app--navbar un-select'>
-          <li>
-            <Link to={this._getIntlMessage('routes.users')}>
-              {this._getIntlMessage('header.users')}
-            </Link>
-          </li>
-          <li>
-            <Link to={this._getIntlMessage('routes.guides')}>
-              {this._getIntlMessage('header.guides')}
-            </Link>
-          </li>
-          <li>
-            <Link to={this._getIntlMessage('routes.protected')}>
-              {this._getIntlMessage('header.protected')}
-            </Link>
-          </li>
-        </ul>
-      </header>
+        <div id="navbarCollapse" className="collapse navbar-collapse">
+          <ul className="nav navbar-nav navbar-right">
+            <li>
+              <Link to={this._getIntlMessage('routes.users')} className="mdl-navigation__link">
+                {this._getIntlMessage('header.users')}
+              </Link>
+            </li>
+            <li>
+              <Link to={this._getIntlMessage('routes.profile')} className="mdl-navigation__link">
+                {this._getIntlMessage('header.profile')}
+              </Link>
+            </li>
+            <li>
+              <Link to={this._getIntlMessage('routes.guides')} className="mdl-navigation__link">
+                {this._getIntlMessage('header.guides')}
+              </Link>
+            </li>
+            <li>
+              <Link to={this._getIntlMessage('routes.protected')} className="mdl-navigation__link">
+                {this._getIntlMessage('header.protected')}
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     );
   }
 }

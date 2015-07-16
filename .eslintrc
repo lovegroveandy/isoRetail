@@ -44,13 +44,9 @@
     "consistent-return": 2,
     "curly": [2, "multi-line"],
     "default-case": 2,
-    "dot-notation": [2, {
-      "allowKeywords": true
-    }],
     "eqeqeq": 2,
     "guard-for-in": 2,
     "no-caller": 2,
-    "no-else-return": 2,
     "no-eq-null": 2,
     "no-eval": 2,
     "no-extend-native": 2,
@@ -81,7 +77,7 @@
     "wrap-iife": [2, "any"],
     "yoda": 2,
     "indent": [2, 2],
-    "brace-style": [2, "stroustrup", {"allowSingleLine": false}],
+    "brace-style": [2, "1tbs", {"allowSingleLine": false}],
     "quotes": [
       2, "single", "avoid-escape"
     ],
@@ -99,7 +95,7 @@
         "afterColon": true
     }],
     "new-cap": [2, {
-      "newIsCap": true
+      "newIsCap": false
     }],
     "no-multiple-empty-lines": [2, {
       "max": 2
@@ -128,5 +124,8 @@
     "jsx": true,
     "modules": true,
     "blockBindings": true
+  },
+  "env": {
+    "jquery": true
   }
 }

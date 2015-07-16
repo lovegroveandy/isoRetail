@@ -17,7 +17,7 @@ class Guides extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Guides</h1>
         <p>Coming soon...</p>
       </div>

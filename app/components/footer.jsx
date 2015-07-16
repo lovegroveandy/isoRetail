@@ -1,16 +1,33 @@
 import React, {Component} from 'react';
+import imageResolver from 'utils/image-resolver';
 
+let booodlIcon;
 if (process.env.BROWSER) {
   require('styles/footer.scss');
+  booodlIcon = require('images/booodl_icon.png');
+} else {
+  booodlIcon = imageResolver('images/booodl_icon.png');
 }
+
 
 class Footer extends Component {
 
   render() {
     return (
-      <footer className='app--footer'>
-        <div className='app--footer-content'>
-          <span dangerouslySetInnerHTML={{__html: '<a class="github-button" href="https://github.com/iam4x/isomorphic-flux-boilerplate" data-icon="octicon-star" data-style="mega" data-count-href="/iam4x/isomorphic-flux-boilerplate/stargazers" data-count-api="/repos/iam4x/isomorphic-flux-boilerplate#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star iam4x/isomorphic-flux-boilerplate on GitHub">Star</a><a class="github-button" href="https://github.com/iam4x/isomorphic-flux-boilerplate/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/iam4x/isomorphic-flux-boilerplate/network" data-count-api="/repos/iam4x/isomorphic-flux-boilerplate#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork iam4x/isomorphic-flux-boilerplate on GitHub">Fork</a>'}}/>
+      <footer>
+        <div className="container">
+          <a href="#" className="booodl_icon logo"><img src={booodlIcon} /></a>
+          <div className="social">
+            <a href="//blog.booodlit.com" target="_blank">Blog</a>
+            <a href="//facebook.com/booodlit" target="_blank">Facebook</a>
+            <a href="//twitter.com/booodl" target="_blank">Twitter</a>
+            <a href="//www.youtube.com/channel/UCt-mJ_KjU-MpXuz-su6PUmg" target="_blank">YouTube</a>
+          </div>
+          <div className="rights">
+            <p className="terms">Copyright &copy; 2015</p>
+            <a href="//booodl.com/privacy" className="terms" target="_blank">Privacy policy</a>
+            <a href="//booodl.com/terms" className="terms" target="_blank">Terms &amp; conditions</a>
+          </div>
         </div>
       </footer>
     );

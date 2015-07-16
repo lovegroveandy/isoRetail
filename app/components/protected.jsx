@@ -18,9 +18,9 @@ const Protected = requireAuth(class Protected extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Protected</h1>
-        <p>secret mesaage</p>
+        <p>secret message</p>
       </div>
     );
   }

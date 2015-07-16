@@ -3,7 +3,8 @@ export default {
     header: {
       users: 'Users List',
       guides: 'Guides',
-      protected: 'Protected'
+      protected: 'Protected',
+      profile: 'Profile'
     },
     guides: {
       'page-title': 'Guides'
@@ -12,7 +13,7 @@ export default {
       'page-title': 'Protected Page'
     },
     profile: {
-      'page-title': 'Profile - {fullName}',
+      'page-title': 'Profile',
       'not-found-page-title': 'User profile not found'
     },
     users: {
@@ -27,7 +28,7 @@ export default {
       users: '/users',
       guides: '/guides',
       protected: '/protected',
-      profile: '/profile/:seed',
+      profile: '/profile',
       'login-info': '/login-info'
     }
   }

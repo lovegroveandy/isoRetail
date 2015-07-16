@@ -8,7 +8,9 @@
     <script src='//cdn.uriit.ru/console-polyfill/index.js'></script>
     <![endif]-->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/ico" href="/favicon.ico">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     {{#each assets.style}}
       <link rel="stylesheet" href="{{this}}">
     {{/each}}
@@ -19,6 +21,7 @@
     {{#each assets.script}}
       <script src="{{this}}"></script>
     {{/each}}
-    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
